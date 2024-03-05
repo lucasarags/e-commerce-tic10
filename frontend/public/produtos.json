@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "avatar": "niqueairsurf",
+    "title": "Nique Air Surf",
+    "description": "Tenis",
+    "price": "R$ 200,00",
+    "itens": 0
+  },
+  {
+    "id": 2,
+    "avatar": "niqueairsurf",
+    "title": "Nique Air Surf",
+    "description": "Tenis",
+    "price": "R$ 200,00",
+    "itens": 0
+  },
+  {
+    "id": 3,
+    "avatar": "niqueairsurf",
+    "title": "Nique Air Surf",
+    "description": "Tenis",
+    "price": "R$ 200,00",
+    "itens": 0
+  },
+  {
+    "id": 4,
+    "avatar": "niqueairsurf",
+    "title": "Nique Air Surf",
+    "description": "Tenis",
+    "price": "R$ 200,00",
+    "itens": 0
+  },
+  {
+    "id": 5,
+    "avatar": "niqueairsurf",
+    "title": "Nique Air Surf",
+    "description": "Tenis",
+    "price": "R$ 200,00",
+    "itens": 0
+  }
+]
