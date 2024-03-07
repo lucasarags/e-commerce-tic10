@@ -48,10 +48,14 @@ export default function Navbar({ showMob, setShowMob }) {
           </ul>
           <div className="border-t border-stone-900 w-[210px] my-4"></div>
           <div className="flex flex-row items-center gap-4 px-[11px]">
-            <h1 className="text-xs font-semibold">Cadastra-se</h1>
-            <button className="bg-blue-900 h-[30px] w-[106px] bottom-7 text-xs font-medium  text-white rounded-lg">
-              Entrar
-            </button>
+            <Link to="/Cadastro">
+              <h1 className="text-xs font-semibold">Cadastra-se</h1>
+            </Link>
+            <Link to="/Login">
+              <button className="bg-blue-900 h-[30px] w-[106px] bottom-7 text-xs font-medium  text-white rounded-lg">
+                Entrar
+              </button>
+            </Link>
           </div>
           <div className="h-screen"></div>
         </div>

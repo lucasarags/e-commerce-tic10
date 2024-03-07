@@ -1,53 +1,112 @@
-import logo from "../../assets/logo.png";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/logo.png";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { ProdutosContext } from "../../context/produtosContext";
+
+function LeftInformation() {
+  const infosPagina = [
+    { id: 1, title: "Sobre o E-Rede Store", url: "/sobre" },
+    { id: 2, title: "Segurança", url: "/segurança" },
+    { id: 3, title: "Lista de desejos", url: "/lista-de-desejos" },
+    { id: 4, title: "Trabalhe conosco", url: "/trabalhe-conosco" },
+  ];
+
+  return (
+    <ul className="font-semibold text-[10px] min-w-32 text-white">
+      <p className="pb-[14px]">Informações</p>
+      {infosPagina.map((info) => (
+        <li key={info.id} className="pl-[2px] pb-2">
+          <Link to={info.url} className="text-slate-100 font-light">
+            {info.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function RightInformation() {
+  const infosCategoria = [
+    { id: 1, title: "categoria", url: "/" },
+    { id: 2, title: "categoria", url: "/" },
+    { id: 3, title: "categoria", url: "/" },
+    { id: 4, title: "categoria", url: "/" },
+  ];
+  return (
+    <ul className="font-semibold text-[10px] min-w-32 text-white">
+      <p className="pb-[14px]">Categorias</p>
+      {infosCategoria.map((info) => (
+        <li key={info.id} className="pl-[2px] pb-2">
+          <Link to={info.url} className="text-slate-100 font-light">
+            {info.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function LogoFooter() {
+  return (
+    <div className="flex flex-col gap-5 pb-5">
+      <div className="flex gap-5">
+        <img src={Logo} alt="" className="h-7" />
+        <section className="text-[10px] text-slate-100">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          necessitatibus repellat, voluptatem! Nobis, ab!Perspiciatis
+          necessitatibus Perspiciatis necessitatibus
+        </section>
+      </div>
+
+      <section className="flex text-base gap-6 text-white">
+        <FaFacebook />
+        <FaInstagram />
+        <FaWhatsapp />
+      </section>
+    </div>
+  );
+}
+
+function LocationFooter() {
+  return (
+    <div className="text-[10px] text-white">
+      <h1 className=" font-semibold py-[14px]">Localização</h1>
+      <a
+        href="https://g.co/kgs/9Nv6bKD"
+        className="font-regular pb-2  text-slate-100"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Av. Treze de Maio, 1116, Bairro de Fátima, Fortaleza-CE
+      </a>
+    </div>
+  );
+}
 
 export default function Footer() {
   return (
-    <footer className="h-[350px] bg-blue-900 p-6 text-[10px] leading-3">
-      <section className="flex">
-        <div>
-          <img src={logo} alt="" className="h-7" />
-          <div className="w-24 pt-6 pb-3 flex justify-between text-zinc-50 text-base">
-            <FaFacebook />
-            <FaInstagram />
-            <FaWhatsapp />
+    <footer className="bg-blue-900 p-6 flex flex-col ">
+      <div className="flex flex-col md:flex-row md: md:gap-[60px] max-w-[1440px] mx-auto">
+        <div className="max-w-[292px]">
+          <LogoFooter />
+        </div>
+        <div className="flex md:gap-[60px]">
+          <div className="flex-1">
+            <LeftInformation />
+          </div>
+          <div className="flex-1">
+            <RightInformation />
           </div>
         </div>
-        <p className="font-normal text-zinc-50">
-          Lorem ipsum lorem ipsum lorem lorem ipsum lorem loram lorem lorem
-          lorem ipsum ipsum ipsum
-        </p>
-      </section>
-      <section className="flex flex-wrap text-slate-100 font-normal ">
-        <div className="flex flex-col w-1/2 leading-loose">
-          <h1 className="text-zinc-50 font-semibold pt-2 pb-1">Informações</h1>
-
-          <a className="ml-0.5">Sobre o E-REDE Store</a>
-          <a className="ml-0.5">Segurança</a>
-          <a className="ml-0.5">Lista de desejos</a>
-          <a className="ml-0.5">Trabalhe Conosco</a>
+        <div className="flex-1">
+          <LocationFooter />
         </div>
-        <div className="flex flex-col w-1/2 leading-loose">
-          <h1 className="text-zinc-50 font-semibold pt-2 pb-1">Informações</h1>
-
-          <a className="ml-0.5">Tênis</a>
-          <a className="ml-0.5">Camisetas</a>
-          <a className="ml-0.5">Acessórios</a>
-          <a className="ml-0.5">Espostivo</a>
-        </div>
-        <div className="flex flex-col w-1/2 leading-loose">
-          <h1 className="text-zinc-50 font-semibold pt-2 pb-1">Localização</h1>
-
-          <h2>Rua Martinho Rodrigues, 331</h2>
-          <h2>Bairro de Fátima, Fortaleza-CE</h2>
-        </div>
-      </section>
-      <div className="border-t-[1px] color-zinc my-4"></div>
-      <p className="text-center text-zinc-50 text-[10px] leading-3 font-normal ">
-        2023 Irede
-      </p>
+      </div>
+      <hr className="mt-4 px-6" />
+      <span className="mt-4 text-[10px] text-center text-white">
+        2024 IREDE
+      </span>
     </footer>
   );
 }

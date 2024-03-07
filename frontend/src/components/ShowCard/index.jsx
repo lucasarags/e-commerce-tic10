@@ -1,7 +1,22 @@
+import { useEffect, useState } from "react";
 import Card from "../Card";
-import produtos from "../../../public/produtos.json";
+import api from "../../api";
 
 export default function ShowCard() {
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    async function fetchProdutos() {
+      try {
+        const produtos = await api.listProducts();
+        setProdutos(produtos);
+      } catch (error) {
+        console.error("Erro ao buscar produtos:", error.message);
+      }
+    }
+
+    fetchProdutos();
+  }, []);
   // Defina uma altura mínima desejada para o componente ShowCard
   const minHeight = "348px";
 

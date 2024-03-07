@@ -4,6 +4,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { ImSearch } from "react-icons/im";
 import Navbar from "../Navbar";
 import ShowCarrinho from "../ShowCarrinho";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [showMob, setShowMob] = useState(false);
@@ -55,7 +56,9 @@ export default function Header() {
               <ImSearch className="text-zinc-500" />
             </div>
           </div>
-          <p className="text-base font-semibold text-zinc-50">Cadastre-se</p>
+          <Link to="/cadastro">
+            <p className="text-base font-semibold text-zinc-50">Cadastre-se</p>
+          </Link>
           <button className="bg-orange-600 h-10 w-[128px] drop-shadow-lg border-[1px] border-black text-base font-semibold text-zinc-50 rounded-lg">
             Entrar
           </button>

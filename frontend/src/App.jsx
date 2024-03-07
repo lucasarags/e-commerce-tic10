@@ -4,6 +4,7 @@ import MeusPedidos from "./pages/MeusPedidos";
 import Produtos from "./pages/Produtos";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
+// import Produto from "./pages/Produto";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Produtos" element={<Produtos />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Cadastro" element={<Cadastro />} />
+        {/* <Route path="/Produto/:id" element={<Produto />} /> */}
       </Routes>
     </BrowserRouter>
   );
