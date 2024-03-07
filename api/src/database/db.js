@@ -1,4 +1,4 @@
-const pg = require("pg");
+const { Pool } = require("pg");
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -9,9 +9,7 @@ console.log("PGDATABASE:", process.env.PGDATABASE);
 console.log("PGHOST:", process.env.PGHOST);
 console.log("PGPORT:", process.env.PGPORT);
 
-const { Pool } = pg;
-
-const pool = new Pool({
+const connection = new Pool({
   user: process.env.PGUSER,
   host: process.env.PGHOST,
   database: process.env.PGDATABASE,
@@ -19,4 +17,4 @@ const pool = new Pool({
   port: process.env.PGPORT,
 });
 
-module.exports = pool;
+module.exports = connection;

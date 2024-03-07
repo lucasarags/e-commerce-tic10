@@ -1,13 +1,17 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const corsMiddleware = require("./middleware/corsMiddleware");
-const ecommerceRouter = require("./routes/ecommerceRoutes");
-const app = express();
+const cors = require("cors");
+const { productsRouter, usersRouter, salesRouter } = require("./routes");
+
 const PORT = process.env.PORT || 3000;
 
-app.use(corsMiddleware);
-app.use(bodyParser.json());
-app.use("/api/ecommerce", ecommerceRouter);
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+
+app.use("/products", productsRouter);
+app.use("/users", usersRouter);
+app.use("/sales", salesRouter);
 
 app.listen(PORT, () => {
   console.log(`API is listening on port ${PORT}`);
